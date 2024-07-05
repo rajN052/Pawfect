@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Homee"
+        android:id="@+id/Homee"
+        android:icon="@drawable/pet_house__1_"
+
+        >
+
+
+    </item>
+
+
+
+
+
+    <item
+        android:title="Menstrual Cycle"
+        android:id="@+id/menstrual"
+        android:icon="@drawable/dog__3_"
+
+        >
+
+    </item>
+
+    <item
+        android:title="Musiccc"
+        android:id="@+id/musicc"
+        android:icon="@drawable/musical_note__1_"
+
+        >
+
+    </item>
+
+</menu>

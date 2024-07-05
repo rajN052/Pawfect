@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/nav_items" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5E35B1"
+        android:id="@+id/toolbar">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/calldobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigate"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:elevation="5dp"
+        android:src="@drawable/pawprint__1_"
+        app:elevation="15dp"
+        app:backgroundTint="#D58E24AA">
+
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <include
+        layout="@layout/container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar">
+
+
+    </include>
+
+</RelativeLayout>

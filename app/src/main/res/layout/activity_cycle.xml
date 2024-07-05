@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="129"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        app:srcCompat="@drawable/grace" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:text="Next cycle in"
+        android:textColor="#000000"
+        android:textSize="20sp">
+
+
+    </TextView>
+
+
+    <cn.iwgang.countdownview.CountdownView
+        android:id="@+id/countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:isHideTimeBackground="true"
+        app:isShowDay="true"
+        app:isShowHour="true"
+        app:isShowMillisecond="true"
+        app:isShowMinute="true"
+        app:isShowSecond="true"
+        app:isTimeTextBold="true"
+        app:suffixGravity="bottom"
+        app:suffixHour="h"
+        app:suffixMillisecond="ms"
+        app:suffixMinute="m"
+        app:suffixDay="d"
+        app:suffixSecond="s"
+        app:suffixTextColor="#000000"
+        app:suffixTextSize="12sp"
+        app:timeTextColor="#000000"
+        app:timeTextSize="47sp" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:alpha="129"
+        android:backgroundTint="#FB8C00"
+        android:text="cycle occured early? click here to reset"
+        app:cornerRadius="25dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="14dp"
+        android:padding="7dp"
+        android:text="Note:- masturbation is a hormonal process and intervals can vary , we advice you to be ready as soon as timer hits 30 days,cheers and love:)"
+        android:textColor="#D5000000"
+        android:textSize="15sp" />
+
+</LinearLayout>

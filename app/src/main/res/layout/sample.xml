@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="#000000"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:backgroundTint="#0CFFFFFF"
+            android:backgroundTintMode="multiply"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ed1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTintMode="multiply"
+                app:srcCompat="@drawable/ed1" />
+
+            <TextView
+                android:id="@+id/perfect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:background="#039BE5"
+                android:backgroundTint="#1B83DF"
+                android:fontFamily="@font/berkshire_swash"
+                android:gravity="center"
+                android:text="Perfect"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

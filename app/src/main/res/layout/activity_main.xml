@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="multiply"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/commoncommunity"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#000000"
+        android:elevation="10dp"
+        app:cardCornerRadius="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:background="@drawable/proudpar">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:gravity="center"
+                android:padding="25dp"
+                android:text="ProudParents Community!"
+                android:textColor="#000000"
+                android:textSize="24sp">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/customcommunity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commoncommunity"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#000000"
+        android:elevation="10dp"
+        app:cardCornerRadius="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:alpha="0.8"
+            android:background="@drawable/dog2">
+
+            <TextView
+                android:id="@+id/customcom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/berkshire_swash"
+                android:gravity="center"
+                android:padding="25dp"
+                android:textColor="#000000"
+                android:textSize="24sp">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/menstrual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="200dp"
+        android:backgroundTint="#FF0707"
+        android:text="Menstrual cycle tracker"
+        app:cornerRadius="10dp" />
+
+
+    <include
+        layout="@layout/backgnd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </include>
+</RelativeLayout>
+

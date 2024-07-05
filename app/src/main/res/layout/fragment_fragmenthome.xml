@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Fragmenthome">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@drawable/comingsoon"
+        android:foregroundGravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="70dp"
+            android:background="#FBF8F8"
+            android:fontFamily="@font/berkshire_swash"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="This feature is Coming Sooonnnn!!"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

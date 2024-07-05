@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:layout_marginBottom="45dp"
+
+    android:background="#F5F5F5"
+
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="368dp"
+
+            android:layout_height="173dp"
+
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentTop="true"
+
+            android:layout_gravity="center"
+
+            android:layout_marginTop="40dp"
+
+            android:foregroundGravity="center"
+
+            app:cardBackgroundColor="#F9C94F"
+
+            app:cardCornerRadius="20dp">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="69dp"
+
+                android:layout_height="69dp"
+
+                android:layout_marginStart="260dp"
+
+                android:layout_marginTop="80dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginTop="10dp"
+
+                    android:text="Breed"
+
+                    android:textColor="#F3F1F1"
+
+                    android:textSize="14sp">
+
+
+                </TextView>
+
+
+                <TextView
+
+                    android:id="@+id/breed"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Husky"
+
+                    android:textColor="#F3F1F1">
+
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="69dp"
+
+                android:layout_height="69dp"
+
+                android:layout_marginStart="160dp"
+
+                android:layout_marginTop="80dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginTop="10dp"
+
+                    android:text="Age"
+
+                    android:textColor="#F3F1F1"
+
+                    android:textSize="14sp">
+
+
+                </TextView>
+
+
+                <TextView
+
+                    android:id="@+id/age"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginTop="5dp"
+
+                    android:text="2"
+                    android:textColor="#F3F1F1">
+
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="69dp"
+
+                android:layout_height="69dp"
+
+                android:layout_marginStart="60dp"
+
+                android:layout_marginTop="80dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginTop="10dp"
+
+                    android:text="Name"
+
+                    android:textColor="#F3F1F1"
+
+                    android:textSize="14sp">
+
+
+                </TextView>
+
+
+                <TextView
+
+                    android:id="@+id/name"
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Grace"
+
+                    android:textColor="#F3F1F1">
+
+
+                </TextView>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="150dp"
+
+            android:layout_marginTop="25dp"
+
+            android:foregroundGravity="center_vertical|center|center_horizontal"
+
+            android:gravity="center_horizontal|center_vertical">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/card"
+
+                android:layout_width="298dp"
+
+                android:layout_height="86dp"
+
+                android:layout_alignParentBottom="true"
+
+                android:layout_centerInParent="false"
+
+                app:cardBackgroundColor="#7E6F6F"
+
+                app:cardCornerRadius="15dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginLeft="47dp"
+
+                    android:layout_marginTop="30dp"
+
+                    android:text="The Faithful Dog"
+
+                    android:textSize="16sp">
+
+
+                </TextView>
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+
+                    android:layout_marginLeft="50dp"
+
+                    android:layout_marginTop="5dp"
+
+                    android:text="Hachiko"
+
+                    android:textSize="34sp">
+
+
+                </TextView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+
+                android:elevation="8dp"
+
+                android:foregroundGravity="center|center_horizontal"
+
+                android:src="@drawable/hachiko_removebg_preview_1"></ImageView>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+
+
+            android:fontFamily="@font/berkshire_swash"
+
+            android:paddingRight="50dp"
+            android:text="Pet Care"
+            android:textColor="#000000"
+            android:textSize="32sp">
+
+
+        </TextView>
+
+
+        <LinearLayout
+
+            android:id="@+id/c"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="161dp"
+
+                android:layout_height="141dp"
+
+                android:layout_margin="15dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <ImageView
+
+                    android:id="@+id/musiccard"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/homepage1_1">
+
+
+                </ImageView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="161dp"
+
+                android:layout_height="141dp"
+
+                android:layout_margin="15dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <ImageView
+
+                    android:id="@+id/community"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/homepage2"
+
+                    >
+
+
+                </ImageView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="161dp"
+
+                android:layout_height="141dp"
+
+                android:layout_margin="15dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <ImageView
+
+                    android:id="@+id/menstrualcard"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/homepage3">
+
+
+                </ImageView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="161dp"
+
+                android:layout_height="141dp"
+
+                android:layout_margin="15dp"
+
+                app:cardBackgroundColor="@color/black"
+
+                app:cardCornerRadius="15dp">
+
+
+                <ImageView
+
+                    android:id="@+id/guidescard"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/homepage4">
+
+
+                </ImageView>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

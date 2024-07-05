@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:background="#FAF5F5" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom"
+        android:padding="7dp">
+
+        <EditText
+            android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/sendimg"
+            android:background="@drawable/edittext"
+            android:hint="Enter message here!"
+            android:paddingStart="8dp"
+            android:textColor="#000000">
+
+
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/sendimg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_send_24">
+
+
+        </ImageButton>
+    </RelativeLayout>
+</RelativeLayout>

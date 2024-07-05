@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38477441201",
+    "project_id": "aao-chatein",
+    "storage_bucket": "aao-chatein.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38477441201:android:5dffe29b03fc005b841a90",
+        "android_client_info": {
+          "package_name": "com.example.aaochatein"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38477441201-k6qqm9lh4i8fvau22rr66upd8k64k75g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKLPQrM29blv52KAQvQNfWUfuAzruUKy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38477441201-k6qqm9lh4i8fvau22rr66upd8k64k75g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
