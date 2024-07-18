@@ -12,6 +12,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.ai.client.generativeai.GenerativeModel;
+import com.google.ai.client.generativeai.java.GenerativeModelFutures;
+import com.google.ai.client.generativeai.type.Content;
+import com.google.ai.client.generativeai.type.GenerateContentResponse;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +45,8 @@ public class DobbyAct extends AppCompatActivity {
     boolean tf;
     Adapter adapter;
     MediaPlayer player;
-
+    GenerativeModel gm ;
+    GenerativeModelFutures model;
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
 
@@ -63,6 +72,11 @@ public class DobbyAct extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setStackFromEnd(true);
         recycle.setLayoutManager(llm);
+
+        gm = new GenerativeModel(/* modelName */ "gemini-1.5-flash",
+// Access your API key as a Build Configuration variable (see "Set up your API key" above)
+                /* apiKey */"AIzaSyAd6jjawnezefQUPwOUCz_WgdqwXxiDY88" );
+         model = GenerativeModelFutures.from(gm);
 
 
         sending.setOnClickListener(new View.OnClickListener() {
@@ -131,58 +145,31 @@ public class DobbyAct extends AppCompatActivity {
 
     void CallDobby(String question)
     {
-        JSONObject body = new JSONObject();
-        try {
-            body.put("model","text-davinci-003");
-            body.put("prompt",question);
-            body.put("max_tokens",4000);
-            body.put("temperature",0);
+        // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
 
-        }
-        catch (JSONException e)
-        {
-            e.printStackTrace();
-        }
+        String prompt=question+"\n"+
+                "answer above message like dobby from harry potter in no more than 100 words";
 
-        RequestBody Jbody  = RequestBody.create(body.toString(),JSON);
-        Request request = new Request.Builder()
-                .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer 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")
-                .post(Jbody)
+        Content content = new Content.Builder()
+                .addText(prompt)
                 .build();
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
 
-                AddResponse("Failed due to "+e.getMessage());
+
+                ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
+        Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
+            @Override
+            public void onSuccess(GenerateContentResponse result) {
+                String resultText = result.getText();
+                System.out.println(resultText);
+                AddtoChat(resultText,Messages.SENT_BY_BOT);
             }
 
             @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                if(response.isSuccessful())
-                {
-                    JSONObject jsonObject = null;
-                    try {
-                        jsonObject = new JSONObject(response.body().string());
-                        JSONArray jsonArray = jsonObject.getJSONArray("choices");
-                        String result = jsonArray.getJSONObject(0).getString("text");
-                        AddResponse(result.trim());
-                    } catch (JSONException e)
-                    {
-                        e.printStackTrace();
-                    }
-
-
-                }
-                else
-                {
-                    AddResponse("Failed due to"+response.body().toString());
-                }
+            public void onFailure(Throwable t) {
+                t.printStackTrace();
             }
-        });
-
-
+        }, this.getMainExecutor());
     }
 
 

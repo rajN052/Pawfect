@@ -92,6 +92,7 @@
         android:layout_marginBottom="200dp"
         android:backgroundTint="#FF0707"
         android:text="Menstrual cycle tracker"
+        android:visibility="gone"
         app:cornerRadius="10dp" />
 
 

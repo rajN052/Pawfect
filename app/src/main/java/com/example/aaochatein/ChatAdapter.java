@@ -42,6 +42,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
+        holder.setIsRecyclable(false);
         if(list.get(position).getID().equals(auth.getUid()))
         {
             holder.receiver.setVisibility(View.GONE);

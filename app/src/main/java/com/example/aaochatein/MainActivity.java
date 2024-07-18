@@ -1,14 +1,16 @@
 package com.example.aaochatein;
 
+import static java.lang.Thread.sleep;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import java.text.SimpleDateFormat;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 
-import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
         String Id= auth.getUid();
 
+
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         custom=findViewById(R.id.customcommunity);
@@ -68,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot)
             {
+
                  user =snapshot.getValue(Users.class);
+
                  breed = user.getDogbreed()+" Community!";
                 view.setText(breed);
             }
@@ -99,73 +104,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-        cycle.setOnClickListener (new View.OnClickListener()  {
-            @Override
-            public void onClick(View v)  {
-
-                if(user.getGender()!=null &&user.getGender().compareTo("female")==0) {
-                    String prevmens = user.getPrevmenscycle();
-
-                        Date D = getDate(prevmens);
-                        Date D1=null;
-                        boolean flag=false;
-
-                        long interval = calculateInterval(D);
-                        long max=15562000000L;
-                        int COUNT=0;
-                        while(interval<0)
-                        {
-                            if(COUNT>=1)
-                            {
-                                D=D1;
-                                flag=true;
-                            }
-                            D1=Add6(D);
-
-
-                            interval=calculateInterval(D1);
-                            COUNT++;
-                        }
-
-                        if(flag)
-                        {
-                            String datee= DateFormat.getDateInstance().format(D);
-                            user.setPrevmenscycle(datee);
-                            database.getReference().child("Users").child(Id).setValue(user);
-                            database.getReference().child(user.getDogbreed()).child(Id).setValue(user);
-                            database.getReference().child("ProudOwners!").child(Id).setValue(user);
-                            Toast.makeText(MainActivity.this, "Info Updated", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this,BroadcasrtReceiver.class);
-                            PendingIntent pintent = PendingIntent.getBroadcast(MainActivity.this,100,intent,PendingIntent.FLAG_IMMUTABLE);
-                            alarmManager.set(AlarmManager.RTC_WAKEUP,Calendar.getInstance().getTimeInMillis()+interval,pintent); //changekaroo
-                        }
-                        Calendar c = Calendar.getInstance();
-                        c.setTime(D);
-                    String currtime= DateFormat.getDateInstance().format(c.getTime());
-                    user.setPrevmenscycle(currtime);
-
-                    Intent intent = new Intent(MainActivity.this,CycleActivity.class);
-                        intent.putExtra("interval",interval);
-                    startActivity(intent);
-                }
-
-                else
-                {
-                    Toast.makeText(MainActivity.this, "This feature is only for female Dogs", Toast.LENGTH_LONG).show();
-                }
-
-
-            }
-        });
-
-
-
-
-
-
     }
 
 
@@ -199,42 +137,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
-    public Date getDate(String prevmens) {
-
-        DateFormat formatter = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.US);
-        Date d = null;
-        try {
-            d = formatter.parse(prevmens);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return d;
-    }
-
-
-
-    public long calculateInterval(Date d)
-    {
-
-        Date now = new Date();
-        long curtime= now.getTime();
-        long newtime=d.getTime();
-        long interval = newtime-curtime;
-        return interval;
-    }
-
-    public Date Add6(Date d)
-    {
-        Calendar c =Calendar.getInstance();
-        c.setTime(d);
-        c.add(Calendar.MONTH,6);
-        d=c.getTime();
-        return d;
-    }
-
 
     }
 

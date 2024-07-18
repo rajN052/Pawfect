@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -138,6 +140,7 @@ public class HomePage extends AppCompatActivity {
                     if(user.getGender()!=null &&user.getGender().compareTo("female")==0) {
                         String prevmens = user.getPrevmenscycle();
 
+                   //     Toast.makeText(HomePage.this,"Hello"+prevmens,Toast.LENGTH_LONG);
                         Date D = getDate(prevmens);
                         Date D1=null;
                         boolean flag=false;
@@ -171,8 +174,10 @@ public class HomePage extends AppCompatActivity {
                             PendingIntent pintent = PendingIntent.getBroadcast(HomePage.this,100,intent,PendingIntent.FLAG_IMMUTABLE);
                             alarmManager.set(AlarmManager.RTC_WAKEUP, Calendar.getInstance().getTimeInMillis()+interval,pintent); //changekaroo
                         }
+                        if(D1==null)D1=(D);
                         Calendar c = Calendar.getInstance();
-                        c.setTime(D);
+                        Log.d("checker3", "onNavigationItemSelected: "+D1.toString());
+                        c.setTime(D1);
                         String currtime= DateFormat.getDateInstance().format(c.getTime());
                         user.setPrevmenscycle(currtime);
 
@@ -306,10 +311,11 @@ public class HomePage extends AppCompatActivity {
 
     public Date getDate(String prevmens) {
 
-        DateFormat formatter = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.US);
+        SimpleDateFormat formatter = new SimpleDateFormat("d MMM yyyy", Locale.US);
         Date d = null;
         try {
             d = formatter.parse(prevmens);
+            Log.d("checker", "getDate: "+d.toString());
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -323,15 +329,20 @@ public class HomePage extends AppCompatActivity {
 
         Date now = new Date();
         long curtime= now.getTime();
-        long newtime=d.getTime();
+        long newtime=0;
+
+        if(d!=null) newtime=d.getTime();
+        else newtime = curtime-(int)100;
         long interval = newtime-curtime;
+        Log.d("checker1", "calculateInterval: "+d.toString());
         return interval;
     }
 
     public Date Add6(Date d)
     {
         Calendar c =Calendar.getInstance();
-        c.setTime(d);
+        if(d!=null)c.setTime(d);
+        else c.setTime(new Date());
         c.add(Calendar.MONTH,6);
         d=c.getTime();
         return d;

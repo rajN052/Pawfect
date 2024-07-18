@@ -3,6 +3,10 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        maven {
+            url = uri("https://storage.googleapis.com/r8-releases/raw")
+        }
+
     }
 }
 dependencyResolutionManagement {
@@ -14,3 +18,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Aao chatein"
 include ':app'
+
